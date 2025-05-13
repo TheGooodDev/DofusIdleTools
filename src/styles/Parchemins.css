@@ -1,0 +1,119 @@
+:root {
+  --color-licorice: #171219;
+  --color-midnight: #225560;
+  --color-icterine: #EDF060;
+  --color-pumpkin: #F0803C;
+}
+
+.page-parchemins {
+  background-color: var(--color-licorice);
+  color: var(--color-icterine);
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.page-parchemins h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.page-parchemins h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-pumpkin);
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: var(--color-icterine);
+  min-width: 200px;
+}
+
+.form select,
+.form input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table thead {
+  background-color: var(--color-midnight);
+  color: white;
+}
+
+table th,
+table td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.simulation-block {
+  background-color: #1e1a25;
+  padding: 1rem;
+  border-left: 4px solid var(--color-midnight);
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+.stat-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+  min-width: 100%;
+}
+
+.stat-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.stat-button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background-color: #2a252f;
+  border: 2px solid transparent;
+  color: var(--color-icterine);
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.stat-button img {
+  width: 20px;
+  height: 20px;
+}
+
+.stat-button:hover {
+  background-color: #3a3344;
+}
+
+.stat-button.active {
+  border-color: var(--color-pumpkin);
+  background-color: #3e2e1e;
+}

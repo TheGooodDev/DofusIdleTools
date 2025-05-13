@@ -1,0 +1,81 @@
+:root {
+  --color-licorice: #171219;
+  --color-midnight: #225560;
+  --color-icterine: #EDF060;
+  --color-pumpkin: #F0803C;
+}
+
+.korriandre-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--color-licorice);
+  color: var(--color-icterine);
+}
+
+.korriandre-container h1 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.korriandre-container h1 span {
+  color: var(--color-icterine);
+}
+
+.korri-section {
+  margin-top: 2rem;
+}
+
+.korri-section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-pumpkin);
+}
+
+.prerequis-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.spell-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  color: #000;
+  width: 100px;
+}
+
+.description-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.video-wrapper {
+  margin-top: 1rem;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

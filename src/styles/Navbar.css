@@ -1,0 +1,7 @@
+.navbar {
+  border-bottom: 2px solid var(--color-midnight-green);
+}
+
+.navbar-title {
+  font-size: 1.2rem;
+}

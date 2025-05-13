@@ -1,0 +1,56 @@
+.profil-container {
+  background-color: var(--color-licorice);
+  color: var(--color-icterine);
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+.profil-container h1,
+.profil-container h2 {
+  color: var(--color-icterine);
+  margin-top: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profil-container input {
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+label span {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+}
+.labeled-input {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: var(--color-icterine);
+}
+
+.labeled-input span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.labeled-input img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}

@@ -1,0 +1,30 @@
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
+import Profil from "./pages/Profil"
+import "./App.css"
+import Home from "./pages/Home"
+import Korriandre from "./pages/Korriandre"
+import Ramdisk from "./pages/Ramdisk"
+import RentabiliteRelique from "./pages/RentabiliteRelique"
+import Parchemins from "./pages/Parchemin"
+import Navbar from "./components/Navbar"
+import './styles/colors.css';
+function App() {
+  return (
+    <Router>
+      <Navbar />
+      <div className="app-container">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Navigate to="/" />} />
+          <Route path="/profil" element={<Profil />} />
+          <Route path="/korriandre" element={<Korriandre />} />
+          <Route path="/ramdisk" element={<Ramdisk />} />
+          <Route path="/rentabilite-relique" element={<RentabiliteRelique />} />
+          <Route path="/parchemins" element={<Parchemins/>} />
+        </Routes>
+      </div>
+    </Router>
+  )
+}
+
+export default App

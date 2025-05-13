@@ -1,0 +1,90 @@
+:root {
+  --color-licorice: #171219;
+  --color-midnight: #225560;
+  --color-icterine: #EDF060;
+  --color-pumpkin: #F0803C;
+}
+
+.page-relique {
+  background-color: var(--color-licorice);
+  color: var(--color-icterine);
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.page-relique h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.page-relique h2 {
+  margin-top: 2rem;
+  color: var(--color-pumpkin);
+}
+
+.page-relique p {
+  margin-bottom: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  min-width: 240px;
+}
+
+.form input {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: white;
+  color: black;
+}
+
+.table-wrapper {
+  max-height: 600px;
+  overflow: auto;
+  border: 1px solid var(--color-midnight);
+  border-radius: 0.5rem;
+  background-color: #1e1a25;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  background-color: var(--color-midnight);
+  color: white;
+  z-index: 1;
+}
+
+th, td {
+  padding: 0.6rem 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+tr.best-gain {
+  background-color: rgba(255, 255, 0, 0.15); /* léger fond jaune */
+  font-weight: bold;
+  border-left: 4px solid var(--color-icterine);
+}

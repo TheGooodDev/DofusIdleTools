@@ -1,0 +1,38 @@
+:root {
+  --color-licorice: #171219;
+  --color-midnight-green: #225560;
+  --color-icterine: #EDF060;
+  --color-pumpkin: #F0803C;
+}
+
+.bg-licorice {
+  background-color: var(--color-licorice) !important;
+}
+
+.bg-midnight {
+  background-color: var(--color-midnight-green) !important;
+}
+
+.bg-icterine {
+  background-color: var(--color-icterine) !important;
+}
+
+.bg-pumpkin {
+  background-color: var(--color-pumpkin) !important;
+}
+
+.text-licorice {
+  color: var(--color-licorice) !important;
+}
+
+.text-midnight {
+  color: var(--color-midnight-green) !important;
+}
+
+.text-icterine {
+  color: var(--color-icterine) !important;
+}
+
+.text-pumpkin {
+  color: var(--color-pumpkin) !important;
+}
