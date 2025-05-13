@@ -44,7 +44,7 @@ export default function Profil() {
 
       // Limite spécifique pour le niveau de relique
       if (key === "Level_Relique") {
-        newValue = Math.min(parsed, 200);
+        newValue = Math.min(parsed, 201);
       }
 
       return { ...prev, [key]: newValue };
