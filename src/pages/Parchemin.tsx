@@ -94,7 +94,7 @@ export default function Parchemins() {
   <div className="stat-selector">
     <span>Stat à améliorer :</span>
     <div className="stat-options">
-      {Object.entries(STAT_KEYS).map(([key, value]) => (
+      {Object.entries(STAT_KEYS).map(([key]) => (
         <button
           key={key}
           onClick={() => setStatName(key as keyof typeof STAT_KEYS)}
