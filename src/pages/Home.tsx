@@ -36,10 +36,7 @@ export default function Home() {
 
   return (
     <main className="home-container">
-      <h1 className="home-title">Dofus IDLE Flemme</h1>
-      <p className="home-subtitle">
-        Si t'as la flemme de sortir une calculette, ou que ton Excel met trop de temps à s'ouvrir.
-      </p>
+      <h1 className="home-title">Dofus IDLE Tools</h1>
 
       <section className="summary-block">
         <h2>📌 Résumé du profil</h2>
