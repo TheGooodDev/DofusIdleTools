@@ -90,41 +90,41 @@ export default function Parchemins() {
         <div className="page-parchemins">
             <h1>Coût en parchemins</h1>
 
-<div className="form">
-  <div className="stat-selector">
-    <span>Stat à améliorer :</span>
-    <div className="stat-options">
-      {Object.entries(STAT_KEYS).map(([key]) => (
-        <button
-          key={key}
-          onClick={() => setStatName(key as keyof typeof STAT_KEYS)}
-          className={`stat-button ${statName === key ? "active" : ""}`}
-        >
-          <img src={`/${key.toLowerCase() === "vita" ? "pv" : key.toLowerCase()}.png`} alt={key} />
-          {key}
-        </button>
-      ))}
-    </div>
-  </div>
+            <div className="form">
+                <div className="stat-selector">
+                    <span>Stat à améliorer :</span>
+                    <div className="stat-options">
+                        {Object.entries(STAT_KEYS).map(([key]) => (
+                            <button
+                                key={key}
+                                onClick={() => setStatName(key as keyof typeof STAT_KEYS)}
+                                className={`stat-button ${statName === key ? "active" : ""}`}
+                            >
+                                <img src={`/${key.toLowerCase() === "vita" ? "pv" : key.toLowerCase()}.png`} alt={key} />
+                                {key}
+                            </button>
+                        ))}
+                    </div>
+                </div>
 
-  <label>
-    Niveau actuel
-    <input
-      type="text"
-      value={formatNumber(Number(lvlActuel))}
-      onChange={(e) => setLvlActuel(parseInt(cleanNumber(e.target.value)))}
-    />
-  </label>
+                <label>
+                    Stats actuel
+                    <input
+                        type="text"
+                        value={formatNumber(Number(lvlActuel))}
+                        onChange={(e) => setLvlActuel(parseInt(cleanNumber(e.target.value)))}
+                    />
+                </label>
 
-  <label>
-    Niveau voulu
-    <input
-      type="text"
-      value={formatNumber(lvlVoulue)}
-      onChange={(e) => setLvlVoulue(parseInt(cleanNumber(e.target.value)))}
-    />
-  </label>
-</div>
+                <label>
+                    Stats voulu
+                    <input
+                        type="text"
+                        value={formatNumber(lvlVoulue)}
+                        onChange={(e) => setLvlVoulue(parseInt(cleanNumber(e.target.value)))}
+                    />
+                </label>
+            </div>
 
 
             <h2>📊 Résultat</h2>
