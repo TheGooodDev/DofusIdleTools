@@ -7,6 +7,9 @@ export default function Ramdisk() {
 
       <section className="ramdisk-section">
         <h2>1. Secret professionnel</h2>
+        <p>
+          <strong>Envoyer paypal</strong>
+        </p>
       </section>
     </div>
   );
