@@ -15,7 +15,7 @@ export default function RentabiliteRelique() {
     })
     const [etageFinal, setEtageFinal] = useState<number>(() => {
         const profil = JSON.parse(localStorage.getItem("profil") || "{}")
-        return profil.Etage_max ?? 200
+        return profil.Etage_max ?? 201
     })
     const [vitesse, setVitesse] = useState(7)
     const [tableau, setTableau] = useState<any[]>([])
@@ -56,7 +56,7 @@ export default function RentabiliteRelique() {
         const points_current_3h = calculPoints3h(niveau, etageFinal, vitesse)
         let bestGain = -Infinity;
         let results: any[] = [];
-        for (let i = 1; i <= 200; i++) {
+        for (let i = 1; i <= 201; i++) {
             const ligneI = data.find((row) => row.Etage === i);
             if (!ligneI) continue;
 
@@ -116,8 +116,8 @@ export default function RentabiliteRelique() {
 
             <div className="form">
                 <label>
-                    Niveau actuel de la relique (1-200)
-                    <input type="number" value={niveau} onChange={(e) => setNiveau(Number(e.target.value))} min={1} max={200} />
+                    Niveau actuel de la relique (1-201)
+                    <input type="number" value={niveau} onChange={(e) => setNiveau(Number(e.target.value))} min={1} max={201} />
                 </label>
                 <label>
                     Étage final (là où vous mourrez)

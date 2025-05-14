@@ -6,7 +6,7 @@ export default function NavigationBar() {
   return (
     <Navbar expand="lg" className="bg-licorice px-4 py-2" variant="dark">
       <Container fluid>
-        <Navbar.Brand as={NavLink} to="/" className="text-icterine fw-bold">🧙‍♂️ Dofus IDLE Flemme</Navbar.Brand>
+        <Navbar.Brand as={NavLink} to="/" className="text-icterine fw-bold">🧙‍♂️ Dofus IDLE Tools</Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
           <Nav className="me-auto">
