@@ -67,7 +67,7 @@ export default function Parchemins() {
         )
         setCoutTotal(total)
         setDetails(parType)
-    }, [lvlActuel, lvlVoulue,statKey])
+    }, [lvlActuel, lvlVoulue, statKey])
 
     useEffect(() => {
         // mise à jour du profil si la stat de base change
@@ -77,19 +77,19 @@ export default function Parchemins() {
             localStorage.setItem("profil", JSON.stringify(updated))
         }
     }, [lvlActuel])
-useEffect(() => {
-    const value = Number(profile[statKey] || 0)
-    setLvlActuel(value)
+    useEffect(() => {
+        const value = Number(profile[statKey] || 0)
+        setLvlActuel(value)
 
-    const tiers = statName === "Vita" ? TIERS_Vita : TIERS
-    const tranche = tiers.find(t => value < t.seuil_max)
-
-    if (tranche) {
-        setLvlVoulue(tranche.seuil_max - 1)
-    } else {
-        setLvlVoulue(value + 1_000_000)
-    }
-}, [statKey])
+        const tiers = statName === "Vita" ? TIERS_Vita : TIERS
+        const tranche = tiers.find(t => value < t.seuil_max)
+        console.log(tranche)
+        if (tranche) {
+            setLvlVoulue(tranche.seuil_max)
+        } else {
+            setLvlVoulue(value + 1_000_000)
+        }
+    }, [statKey])
     useEffect(() => {
         if (coutTotal > 0) {
             const { Level_Relique, Etage_max } = profile
