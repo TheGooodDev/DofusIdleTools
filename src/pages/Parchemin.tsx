@@ -7,6 +7,12 @@ const TIERS = [
     { seuil_max: 10_000_000, cout: 1_000, gain: 450, label: "Grand Parchemin" },
     { seuil_max: 100_000_000, cout: 10_000, gain: 6_000, label: "Puissant Parchemin" },
 ]
+const TIERS_Vita = [
+    { seuil_max: 200_000, cout: 5, gain: 1, label: "Petit Parchemin" },
+    { seuil_max: 2_000_050, cout: 50, gain: 35, label: "Parchemin" },
+    { seuil_max: 20_001_000, cout: 500, gain: 450, label: "Grand Parchemin" },
+    { seuil_max: 200_000_000, cout: 5_000, gain: 6_000, label: "Puissant Parchemin" },
+]
 
 const STAT_KEYS: Record<string, keyof Profile> = {
     Air: "Stats_air",
@@ -53,9 +59,11 @@ export default function Parchemins() {
     const [nbRuns, setNbRuns] = useState<number | null>(null)
 
     useEffect(() => {
+        const tiers = statName === "Vita" ? TIERS_Vita : TIERS
         const { total, parType } = calculerCoutParchemin(
             Number(lvlActuel),
-            Number(lvlVoulue)
+            Number(lvlVoulue),
+            tiers
         )
         setCoutTotal(total)
         setDetails(parType)
@@ -154,13 +162,13 @@ export default function Parchemins() {
     )
 }
 
-function calculerCoutParchemin(niveauActuel: number, niveauVoulu: number) {
+function calculerCoutParchemin(niveauActuel: number, niveauVoulu: number, tiers: typeof TIERS) {
     let temp = niveauActuel
     let coutTotal = 0
     const nbParchemins: Record<string, number> = {}
-    TIERS.forEach(({ label }) => (nbParchemins[label] = 0))
+    tiers.forEach(({ label }) => (nbParchemins[label] = 0))
 
-    for (const row of TIERS) {
+    for (const row of tiers) {
         if (temp >= niveauVoulu) break
         const borneInf = temp
         const borneSup = Math.min(row.seuil_max - 1, niveauVoulu - 1)
