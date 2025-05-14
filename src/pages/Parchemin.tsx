@@ -68,7 +68,7 @@ export default function Parchemins() {
         )
         setCoutTotal(total)
         setDetails(parType)
-    }, [lvlActuel, lvlVoulue])
+    }, [lvlActuel, lvlVoulue,statKey])
 
     useEffect(() => {
         // mise à jour du profil si la stat de base change
