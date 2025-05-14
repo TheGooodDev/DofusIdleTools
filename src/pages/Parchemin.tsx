@@ -60,7 +60,6 @@ export default function Parchemins() {
 
     useEffect(() => {
         const tiers = statName === "Vita" ? TIERS_Vita : TIERS
-        console.log("Tiers utilisés :", statName)
         const { total, parType } = calculerCoutParchemin(
             Number(lvlActuel),
             Number(lvlVoulue),
