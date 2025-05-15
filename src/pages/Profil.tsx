@@ -85,7 +85,7 @@ export default function Profil() {
         <LabeledInput label="Étages max idle" value={profile.Etage_max} onChange={(v) => update("Etage_max", v)} />
       </div>
       <h2>Status VIP</h2>
-      <div className="form-group">
+      <div className="form-group vip-checkbox">
         <label className="labeled-input">
           <span>VIP :</span>
           <input

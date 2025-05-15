@@ -37,7 +37,7 @@ label span {
 }
 .labeled-input {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 0.5rem;
   font-weight: 500;
   color: var(--color-icterine);
