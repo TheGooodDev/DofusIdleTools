@@ -20,7 +20,13 @@ export default function NavigationBar() {
             </NavDropdown>
 
             <NavDropdown title="🏰 Farm donjon" className="text-icterine" menuVariant="dark">
+              <NavDropdown.Item as={NavLink} to="/royalmouth">🐑 Royalmouth</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/mansot">🐧 Mansot Royal</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/ben">🏴‍☠️ Ben le Ripate</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/obsidiantre">🌋 Obsidiantre</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/givrefoux">❄️ Givrefoux</NavDropdown.Item>
               <NavDropdown.Item as={NavLink} to="/korriandre">🕷️ Korriandre</NavDropdown.Item>
+              <NavDropdown.Item as={NavLink} to="/kolosso">🐻‍❄️ Kolosso</NavDropdown.Item>
             </NavDropdown>
           </Nav>
 

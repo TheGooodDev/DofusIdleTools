@@ -1,11 +1,11 @@
-import "../styles/Korriandre.css";
+import "../../styles/Donjon.css";
 
-export default function Korriandre() {
+export default function donjon() {
   return (
-    <div className="korriandre-container">
+    <div className="donjon-container">
       <h1>🕷️ <span>Farm Korriandre</span></h1>
 
-      <section className="korri-section">
+      <section className="donjon-section">
         <h2>Prérequis</h2>
         <div className="prerequis-row">
           <Spell icon="/spell/peur.png" level={6} name="Peur" />
@@ -13,21 +13,21 @@ export default function Korriandre() {
         </div>
       </section>
 
-      <section className="korri-section">
+      <section className="donjon-section">
         <h2>Description</h2>
         <ul className="description-list">
-          <li>📍 Bloquer le korriandre dans le coin en base</li>
+          <li>📍 Bloquer le Korriandre dans le coin en base</li>
           <li>🌀 Utiliser <strong>Peur</strong> pour le pousser ou <strong>Dispe</strong> s’il est sur la case de départ la plus basse</li>
           <li>🪙 Utiliser le <strong>Coffre</strong> pour le bloquer</li>
         </ul>
       </section>
 
-      <section className="korri-section">
+      <section className="donjon-section">
         <h2>Vidéo</h2>
         <div className="video-wrapper">
           <iframe
             src="https://www.youtube.com/embed/vvP5knbWTOQ"
-            title="Farm Korriandre"
+            title="Farm korriandre"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

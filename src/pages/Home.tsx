@@ -70,7 +70,13 @@ export default function Home() {
         </Section>
 
         <Section title="💰 Farm Donjons" color="icterine">
+          <PageLink to="/royalmouth" icon="🐑">Royalmouth</PageLink>
+          <PageLink to="/mansot" icon="🐧">Mansot Royal</PageLink>
+          <PageLink to="/ben" icon="🏴‍☠️">Ben le Ripate</PageLink>
+          <PageLink to="/obsidiantre" icon="🌋">Obsidiantre</PageLink>
+          <PageLink to="/givrefoux" icon="❄️">Givrefoux</PageLink>
           <PageLink to="/korriandre" icon="🕷️">Korriandre</PageLink>
+          <PageLink to="/kolosso" icon="🐻‍❄️">Kolosso</PageLink>
         </Section>
       </div>
     </main>

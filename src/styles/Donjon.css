@@ -5,7 +5,7 @@
   --color-pumpkin: #F0803C;
 }
 
-.korriandre-container {
+.donjon-container {
   max-width: 800px;
   margin: auto;
   padding: 2rem;
@@ -13,7 +13,7 @@
   color: var(--color-icterine);
 }
 
-.korriandre-container h1 {
+.donjon-container h1 {
   font-size: 2.2rem;
   font-weight: bold;
   margin-bottom: 1rem;
@@ -22,15 +22,15 @@
   gap: 0.5rem;
 }
 
-.korriandre-container h1 span {
+.donjon-container h1 span {
   color: var(--color-icterine);
 }
 
-.korri-section {
+.donjon-section {
   margin-top: 2rem;
 }
 
-.korri-section h2 {
+.donjon-section h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--color-pumpkin);
