@@ -10,6 +10,7 @@ type Profile = {
   Stats_Vita: number
   Level_Relique: number
   Etage_max: number
+  Vip: boolean
 }
 
 const DEFAULT_PROFILE: Profile = {
@@ -21,6 +22,7 @@ const DEFAULT_PROFILE: Profile = {
   Stats_Vita: 0,
   Level_Relique: 1,
   Etage_max: 1,
+  Vip: false,
 }
 
 const LOCAL_KEY = "profil"
@@ -30,7 +32,9 @@ export default function Profil() {
     const saved = localStorage.getItem(LOCAL_KEY)
     return saved ? JSON.parse(saved) : DEFAULT_PROFILE
   })
-
+  const handleVip = (checked: boolean) => {
+    setProfile((prev) => ({ ...prev, Vip: checked }))
+  }
   // Sauvegarde automatique dès que le profil change
   useEffect(() => {
     localStorage.setItem(LOCAL_KEY, JSON.stringify(profile))
@@ -67,18 +71,29 @@ export default function Profil() {
         placeholder="Pseudo"
       />
 
-<h2>Stats élémentaires</h2>
-<div className="grid">
-  <LabeledInput label={<><img src="/air.png" alt="Air" /> Agilité</>} value={profile.Stats_air} onChange={(v) => update("Stats_air", v)} />
-  <LabeledInput label={<><img src="/feu.png" alt="Feu" /> Intelligence</>} value={profile.Stats_Feu} onChange={(v) => update("Stats_Feu", v)} />
-  <LabeledInput label={<><img src="/eau.png" alt="Eau" /> Chance</>} value={profile.Stats_Eau} onChange={(v) => update("Stats_Eau", v)} />
-  <LabeledInput label={<><img src="/terre.png" alt="Terre" /> Force</>} value={profile.Stats_Terre} onChange={(v) => update("Stats_Terre", v)} />
-  <LabeledInput label={<><img src="/pv.png" alt="PV" /> Vitalité</>} value={profile.Stats_Vita} onChange={(v) => update("Stats_Vita", v)} />
-</div>
+      <h2>Stats élémentaires</h2>
+      <div className="grid">
+        <LabeledInput label={<><img src="/air.png" alt="Air" /> Agilité</>} value={profile.Stats_air} onChange={(v) => update("Stats_air", v)} />
+        <LabeledInput label={<><img src="/feu.png" alt="Feu" /> Intelligence</>} value={profile.Stats_Feu} onChange={(v) => update("Stats_Feu", v)} />
+        <LabeledInput label={<><img src="/eau.png" alt="Eau" /> Chance</>} value={profile.Stats_Eau} onChange={(v) => update("Stats_Eau", v)} />
+        <LabeledInput label={<><img src="/terre.png" alt="Terre" /> Force</>} value={profile.Stats_Terre} onChange={(v) => update("Stats_Terre", v)} />
+        <LabeledInput label={<><img src="/pv.png" alt="PV" /> Vitalité</>} value={profile.Stats_Vita} onChange={(v) => update("Stats_Vita", v)} />
+      </div>
       <h2>Progression</h2>
       <div className="grid">
         <LabeledInput label="Niveau relique" value={profile.Level_Relique} onChange={(v) => update("Level_Relique", v)} />
         <LabeledInput label="Étages max idle" value={profile.Etage_max} onChange={(v) => update("Etage_max", v)} />
+      </div>
+      <h2>Status VIP</h2>
+      <div className="form-group">
+        <label className="labeled-input">
+          <span>VIP :</span>
+          <input
+            type="checkbox"
+            checked={profile.Vip}
+            onChange={(e) => handleVip(e.target.checked)}
+          />
+        </label>
       </div>
     </div>
   )

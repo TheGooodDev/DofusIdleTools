@@ -7,7 +7,26 @@ const TIERS = [
     { seuil_max: 10_000_000, cout: 1_000, gain: 450, label: "Grand Parchemin" },
     { seuil_max: 100_000_000, cout: 10_000, gain: 6_000, label: "Puissant Parchemin" },
 ]
+
+
+const TIERS_NEW = [
+    { seuil_max: 100_000, cout: 100, gain: 15, label: "Parchemin 0 - 100k" },
+    { seuil_max: 1_000_000, cout: 100, gain: 35, label: "Parchemin 100k - 1M" },
+    { seuil_max: 10_000_000, cout: 100, gain: 45, label: "Parchemin 1M - 10M" },
+    { seuil_max: 25_000_000, cout: 100, gain: 60, label: "Parchemin 10M - 25M" },
+    { seuil_max: 50_000_000, cout: 100, gain: 80, label: "Parchemin 25M-50M" },
+    { seuil_max: 100_000_000, cout: 100, gain: 105, label: "Parchemin 50M-100M" },
+    { seuil_max: 200_000_000, cout: 100, gain: 135, label: "Parchemin 100M-200M" },
+]
+
 const TIERS_Vita = [
+    { seuil_max: 200_000, cout: 5, gain: 1, label: "Petit Parchemin" },
+    { seuil_max: 2_000_050, cout: 50, gain: 35, label: "Parchemin" },
+    { seuil_max: 20_001_000, cout: 500, gain: 450, label: "Grand Parchemin" },
+    { seuil_max: 200_000_000, cout: 5_000, gain: 6_000, label: "Puissant Parchemin" },
+]
+
+const TIERS_Vita_New = [
     { seuil_max: 200_000, cout: 5, gain: 1, label: "Petit Parchemin" },
     { seuil_max: 2_000_050, cout: 50, gain: 35, label: "Parchemin" },
     { seuil_max: 20_001_000, cout: 500, gain: 450, label: "Grand Parchemin" },
