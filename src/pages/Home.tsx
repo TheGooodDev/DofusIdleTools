@@ -29,17 +29,21 @@ function getProfile(): Profile {
 }
 
 function pointsParRun(start: number, end: number): number {
-  return ((end - start + 1) * (start + end)) / 2;
+  var res = 0;
+  const profile = getProfile();
+  for (let i = start; i <= end; i++) {
+    let add = i
+    if(profile.Vip)
+      add = Math.ceil(i * 1.1)
+    res += add;
+  }
+
+  return res;
 }
 
 export default function Home() {
   const profile = getProfile();
   let pointsRun = pointsParRun(profile.Level_Relique, profile.Etage_max);
-
-  // Bonus VIP : +10%
-  if (profile.Vip) {
-    pointsRun = Math.round(pointsRun * 1.1);
-  }
 
   return (
     <main className="home-container">
