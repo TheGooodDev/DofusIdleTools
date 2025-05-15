@@ -34,11 +34,4 @@ export default function donjon() {
   );
 }
 
-function Spell({ icon, level, name }: { icon: string; level: number; name: string }) {
-  return (
-    <div className="spell-block">
-      <img src={icon} alt={name} width={80} height={80} />
-      <strong>Niv. {level}</strong>
-    </div>
-  );
-}
+
