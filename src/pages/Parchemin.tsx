@@ -1,37 +1,35 @@
 import { useEffect, useState } from "react"
 import "../styles/Parchemins.css"
 
+// const TIERS = [
+//     { seuil_max: 100_000, cout: 10, gain: 1, label: "Petit Parchemin" },
+//     { seuil_max: 1_000_000, cout: 100, gain: 35, label: "Parchemin" },
+//     { seuil_max: 10_000_000, cout: 1_000, gain: 450, label: "Grand Parchemin" },
+//     { seuil_max: 100_000_000, cout: 10_000, gain: 6_000, label: "Puissant Parchemin" },
+// ]
+
+
 const TIERS = [
-    { seuil_max: 100_000, cout: 10, gain: 1, label: "Petit Parchemin" },
-    { seuil_max: 1_000_000, cout: 100, gain: 35, label: "Parchemin" },
-    { seuil_max: 10_000_000, cout: 1_000, gain: 450, label: "Grand Parchemin" },
-    { seuil_max: 100_000_000, cout: 10_000, gain: 6_000, label: "Puissant Parchemin" },
+    { seuil_max: 100_000, cout: 100, gain: 15, label: "Parchemin 0 - 100k" },
+    { seuil_max: 1_000_000, cout: 100, gain: 35, label: "Parchemin 100k - 1M" },
+    { seuil_max: 10_000_000, cout: 100, gain: 45, label: "Parchemin 1M - 10M" },
+    { seuil_max: 25_000_000, cout: 100, gain: 60, label: "Parchemin 10M - 25M" },
+    { seuil_max: 50_000_000, cout: 100, gain: 80, label: "Parchemin 25M-50M" },
+    { seuil_max: 100_000_000, cout: 100, gain: 105, label: "Parchemin 50M-100M" },
+    { seuil_max: 200_000_000, cout: 100, gain: 135, label: "Parchemin 100M-200M" },
 ]
 
 
-// const TIERS_NEW = [
-//     { seuil_max: 100_000, cout: 100, gain: 15, label: "Parchemin 0 - 100k" },
-//     { seuil_max: 1_000_000, cout: 100, gain: 35, label: "Parchemin 100k - 1M" },
-//     { seuil_max: 10_000_000, cout: 100, gain: 45, label: "Parchemin 1M - 10M" },
-//     { seuil_max: 25_000_000, cout: 100, gain: 60, label: "Parchemin 10M - 25M" },
-//     { seuil_max: 50_000_000, cout: 100, gain: 80, label: "Parchemin 25M-50M" },
-//     { seuil_max: 100_000_000, cout: 100, gain: 105, label: "Parchemin 50M-100M" },
-//     { seuil_max: 200_000_000, cout: 100, gain: 135, label: "Parchemin 100M-200M" },
-// ]
 
 const TIERS_Vita = [
-    { seuil_max: 200_000, cout: 5, gain: 1, label: "Petit Parchemin" },
-    { seuil_max: 2_000_050, cout: 50, gain: 35, label: "Parchemin" },
-    { seuil_max: 20_001_000, cout: 500, gain: 450, label: "Grand Parchemin" },
-    { seuil_max: 200_000_000, cout: 5_000, gain: 6_000, label: "Puissant Parchemin" },
-]
-
-// const TIERS_Vita_New = [
-//     { seuil_max: 200_000, cout: 5, gain: 1, label: "Petit Parchemin" },
-//     { seuil_max: 2_000_050, cout: 50, gain: 35, label: "Parchemin" },
-//     { seuil_max: 20_001_000, cout: 500, gain: 450, label: "Grand Parchemin" },
-//     { seuil_max: 200_000_000, cout: 5_000, gain: 6_000, label: "Puissant Parchemin" },
-// ]
+    { seuil_max: 100_000, cout: 100, gain: 30, label: "Parchemin 0 - 100k" },
+    { seuil_max: 1_000_000, cout: 100, gain: 70, label: "Parchemin 100k - 1M" },
+    { seuil_max: 10_000_000, cout: 100, gain: 90, label: "Parchemin 1M - 10M" },
+    { seuil_max: 25_000_000, cout: 100, gain: 120, label: "Parchemin 10M - 25M" },
+    { seuil_max: 50_000_000, cout: 100, gain: 160, label: "Parchemin 25M-50M" },
+    { seuil_max: 100_000_000, cout: 100, gain: 210, label: "Parchemin 50M-100M" },
+    { seuil_max: 200_000_000, cout: 100, gain: 270, label: "Parchemin 100M-200M" },
+ ]
 
 const STAT_KEYS: Record<string, keyof Profile> = {
     Air: "Stats_air",
@@ -50,8 +48,22 @@ type Profile = {
     Stats_Vita: number
     Level_Relique: number
     Etage_max: number
+    Vip: boolean
 }
-
+function getProfile(): Profile {
+  const profil = JSON.parse(localStorage.getItem("profil") || "{}");
+  return {
+    Pseudo: profil.Pseudo || "Inconnu",
+    Stats_air: profil.Stats_air || 0,
+    Stats_Feu: profil.Stats_Feu || 0,
+    Stats_Eau: profil.Stats_Eau || 0,
+    Stats_Terre: profil.Stats_Terre || 0,
+    Stats_Vita: profil.Stats_Vita || 0,
+    Level_Relique: profil.Level_Relique || 1,
+    Etage_max: profil.Etage_max || 1,
+    Vip: profil.Vip || false,
+  };
+}
 export default function Parchemins() {
     const [profile, setProfile] = useState<Profile>(() => {
         const stored = localStorage.getItem("profil")
@@ -212,7 +224,16 @@ function calculerCoutParchemin(niveauActuel: number, niveauVoulu: number, tiers:
 }
 
 function pointsParRun(start: number, end: number): number {
-    return ((end - start + 1) * (start + end)) / 2
+  var res = 0;
+  const profile = getProfile();
+  for (let i = start; i <= end; i++) {
+    let add = i
+    if(profile.Vip)
+      add = Math.ceil(i * 1.1)
+    res += add;
+  }
+
+  return res;
 }
 
 function cleanNumber(str: string): string {
