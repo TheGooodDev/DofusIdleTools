@@ -10,6 +10,7 @@ type Profile = {
   Stats_Vita: number
   Level_Relique: number
   Etage_max: number
+  Etage_max_acsension: number
   Vip: boolean
 }
 
@@ -22,6 +23,7 @@ const DEFAULT_PROFILE: Profile = {
   Stats_Vita: 0,
   Level_Relique: 1,
   Etage_max: 1,
+  Etage_max_acsension: 1,
   Vip: false,
 }
 
@@ -30,7 +32,8 @@ const LOCAL_KEY = "profil"
 export default function Profil() {
   const [profile, setProfile] = useState<Profile>(() => {
     const saved = localStorage.getItem(LOCAL_KEY)
-    return saved ? JSON.parse(saved) : DEFAULT_PROFILE
+    const parsed = saved ? JSON.parse(saved) : {}
+    return { ...DEFAULT_PROFILE, ...parsed }
   })
   const handleVip = (checked: boolean) => {
     setProfile((prev) => ({ ...prev, Vip: checked }))
@@ -83,6 +86,7 @@ export default function Profil() {
       <div className="grid">
         <LabeledInput label="Niveau relique" value={profile.Level_Relique} onChange={(v) => update("Level_Relique", v)} />
         <LabeledInput label="Étages max idle" value={profile.Etage_max} onChange={(v) => update("Etage_max", v)} />
+        <LabeledInput label="Étages max ascension" value={profile.Etage_max_acsension} onChange={(v) => update("Etage_max_acsension", v)} />
       </div>
       <h2>Status VIP</h2>
       <div className="form-group vip-checkbox">

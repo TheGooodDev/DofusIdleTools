@@ -10,6 +10,7 @@ type Profile = {
   Stats_Vita: number;
   Level_Relique: number;
   Etage_max: number;
+  Etage_max_acsension: number;
   Vip: boolean;
 };
 
@@ -24,6 +25,7 @@ function getProfile(): Profile {
     Stats_Vita: profil.Stats_Vita || 0,
     Level_Relique: profil.Level_Relique || 1,
     Etage_max: profil.Etage_max || 1,
+    Etage_max_acsension: profil.Etage_max_acsension || 1,
     Vip: profil.Vip || false,
   };
 }
