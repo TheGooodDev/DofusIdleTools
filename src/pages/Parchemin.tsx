@@ -17,10 +17,10 @@ const TIERS = [
     { seuil_max: 50_000_000, cout: 100, gain: 80, label: "Parchemin 25M-50M" },
     { seuil_max: 100_000_000, cout: 100, gain: 105, label: "Parchemin 50M-100M" },
     { seuil_max: 200_000_000, cout: 100, gain: 135, label: "Parchemin 100M-200M" },
-    { seuil_max: 250_000_000, cout: 100, gain: 170, label: "Parchemin 200M-250M" },
-    { seuil_max: 300_000_000, cout: 100, gain: 210, label: "Parchemin 250M-300M" },
-    { seuil_max: 350_000_000, cout: 100, gain: 255, label: "Parchemin 300M-350M" },
-    { seuil_max: 400_000_000, cout: 100, gain: 305, label: "Parchemin 350M-400M" },
+    { seuil_max: 500_000_000, cout: 100, gain: 500, label: "Parchemin 200M-500M" },
+    { seuil_max: 800_000_000, cout: 100, gain: 450, label: "Parchemin 500M-800M" },
+    { seuil_max: 1_000_000_000, cout: 100, gain: 400, label: "Parchemin 800M-1MM" },
+    { seuil_max: 1_500_000_000, cout: 100, gain: 350, label: "Parchemin 1MM-1.5MM" },
 ]
 
 
